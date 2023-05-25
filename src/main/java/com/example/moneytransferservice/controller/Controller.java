@@ -7,7 +7,7 @@ import com.example.moneytransferservice.service.ConfirmService;
 import com.example.moneytransferservice.service.TransferService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/")

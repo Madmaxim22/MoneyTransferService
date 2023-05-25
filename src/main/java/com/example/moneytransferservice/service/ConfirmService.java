@@ -3,7 +3,6 @@ package com.example.moneytransferservice.service;
 import com.example.moneytransferservice.model.Card;
 import com.example.moneytransferservice.model.Confirm;
 import com.example.moneytransferservice.model.TransferCard;
-import com.example.moneytransferservice.model.TransferCardDto;
 import com.example.moneytransferservice.repository.Repository;
 import com.example.moneytransferservice.response.Response;
 import com.example.moneytransferservice.response.SuccessesTransfer;
@@ -42,13 +41,13 @@ public class ConfirmService {
 
     void increaseAndDecreaseBalance(long commission, TransferCard card) {
         // вычитание процента
-        long amountCommission = card.getAmount().getValue() - commission;
+        long amountCommission = card.getAmount().getValue() + commission;
         Card debitCard = repository.getCard(card.getCardFromNumber());
         Card creditCard = repository.getCard(card.getCardToNumber());
         // уменьшение баланса на одной карте
-        creditCard.increaseBalance(amountCommission);
-        creditCard.increaseBalance(commission);
-        // увеличение баланса на другой карте
         debitCard.decreaseBalance(amountCommission);
+        // увеличение баланса на другой карте
+        creditCard.increaseBalance(card.getAmount().getValue());
+
     }
 }
