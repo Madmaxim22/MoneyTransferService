@@ -45,7 +45,7 @@ class TransferServiceTest {
     void transferTest() {
         ResponseEntity<Response> responseEntity = service.transfer(transferCardDto);
 
-        Response response = new SuccessesTransfer("1");
+        Response response = new SuccessesTransfer(1);
 
         assertThat(responseEntity.getBody().toString(), hasToString(response.toString()));
         assertThat(responseEntity.getStatusCode(), equalTo(HttpStatus.OK));
@@ -55,7 +55,7 @@ class TransferServiceTest {
     void transferExceptionTest() {
         ResponseEntity<Response> responseEntity = service.transfer(transferCardDto);
 
-        Response response = new SuccessesTransfer("1");
+        Response response = new SuccessesTransfer(1);
 
         assertThat(responseEntity.getBody().toString(), hasToString(response.toString()));
         assertThat(responseEntity.getStatusCode(), equalTo(HttpStatus.OK));

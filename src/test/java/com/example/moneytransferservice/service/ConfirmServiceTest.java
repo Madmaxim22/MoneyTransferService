@@ -46,7 +46,7 @@ class ConfirmServiceTest {
         amount.setCurrency("RUR");
         card.setAmount(amount);
         card.setConfirmationCode("0000");
-        card.setOperationId("1");
+        card.setOperationId(1);
 
         service.increaseAndDecreaseBalance(10, card);
 
