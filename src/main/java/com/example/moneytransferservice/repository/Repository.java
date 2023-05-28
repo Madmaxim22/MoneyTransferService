@@ -47,8 +47,8 @@ public class Repository {
         return card.getUserPhoneNumber();
     }
 
-    public long getId() {
-        return operationId.incrementAndGet();
+    public int getId() {
+        return (int) operationId.incrementAndGet();
     }
 
     public boolean saveTransferCard(TransferCard transferCard) {
@@ -62,11 +62,10 @@ public class Repository {
                 .orElseThrow(NotFoundException::new);
     }
 
-    public TransferCard getTransferCard(String operationId) {
-        TransferCard transferCard = transferCards.stream()
-                .filter(c -> c.getOperationId().equals(operationId))
+    public TransferCard getTransferCard(int operationId) {
+        return transferCards.stream()
+                .filter(c -> c.getOperationId() == operationId)
                 .findAny()
                 .orElseThrow(NotFoundException::new);
-        return transferCard;
     }
 }

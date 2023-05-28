@@ -30,7 +30,7 @@ public class TransferService {
         // Отправка сообщения с кодом на телефон
         String confirmationCode = SendMessage.sendMessage(userPhoneNumber);
         // Получаем id операции
-        String operationId = String.valueOf(repository.getId());
+        int operationId = repository.getId();
         // Создаем объект операции
         TransferCard card = mapper.transferCardDtoToTransferCard(transferCardDto);
         card.setConfirmationCode(confirmationCode);

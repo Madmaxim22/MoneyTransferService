@@ -1,17 +1,20 @@
 package com.example.moneytransferservice.response;
 
 public class SuccessesTransfer implements Response{
-    private String operationId;
+    private int operationId;
 
-    public SuccessesTransfer(String operationId) {
+    public SuccessesTransfer(int operationId) {
         this.operationId = operationId;
     }
 
-    public String getOperationId() {
+    public SuccessesTransfer() {
+    }
+
+    public int getOperationId() {
         return operationId;
     }
 
-    public void setOperationId(String operationId) {
+    public void setOperationId(int operationId) {
         this.operationId = operationId;
     }
 

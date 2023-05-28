@@ -7,7 +7,7 @@ public class TransferCard {
     private String cardFromCVV;
     private String cardToNumber;
     private Amount amount;
-    private String operationId;
+    private int operationId;
     private String confirmationCode;
 
     public String getCardFromNumber() {
@@ -50,11 +50,11 @@ public class TransferCard {
         this.amount = amount;
     }
 
-    public String getOperationId() {
+    public int getOperationId() {
         return operationId;
     }
 
-    public void setOperationId(String operationId) {
+    public void setOperationId(int operationId) {
         this.operationId = operationId;
     }
 

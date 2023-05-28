@@ -7,21 +7,21 @@ public class Confirm {
 
     @NotBlank
     @Positive
-    private String operationId;
+    private int operationId;
 
     @NotBlank
     private String code;
 
-    public Confirm(String operationId, String code) {
+    public Confirm(int operationId, String code) {
         this.operationId = operationId;
         this.code = code;
     }
 
-    public String getOperationId() {
+    public int getOperationId() {
         return operationId;
     }
 
-    public void setOperationId(String operationId) {
+    public void setOperationId(int operationId) {
         this.operationId = operationId;
     }
 

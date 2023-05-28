@@ -7,6 +7,9 @@ public class ErrorInputData implements Response {
     private String message;
     private int id = 0;
 
+    public ErrorInputData() {
+    }
+
     public ErrorInputData(String message) {
         this.message = message;
     }

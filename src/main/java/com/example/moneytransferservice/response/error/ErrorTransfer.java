@@ -6,6 +6,9 @@ public class ErrorTransfer implements Response {
     private String message;
     private int id = 0;
 
+    public ErrorTransfer() {
+    }
+
     public ErrorTransfer(String message) {
         this.message = message;
     }
