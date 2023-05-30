@@ -7,6 +7,7 @@ import com.example.moneytransferservice.response.error.ErrorInputData;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpEntity;
@@ -25,8 +26,10 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @Testcontainers
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class IntegrationApplicationTest {
+public class IntegrationDockerApplicationTest {
 
+    @Value(value = "${local.server.port}")
+    private int port;
     TransferCardDto transferCardDto;
     Amount amount;
 
@@ -34,7 +37,7 @@ public class IntegrationApplicationTest {
     TestRestTemplate restTemplate;
 
     @Container
-    private static final GenericContainer<?> backend = new GenericContainer<>("moneytransferservice-beckend:latest")
+    private static final GenericContainer<?> backend = new GenericContainer<>("moneytransferservice-backend:latest")
             .withExposedPorts(8080);
 
     @BeforeEach
@@ -56,7 +59,7 @@ public class IntegrationApplicationTest {
         HttpEntity<TransferCardDto> entity = new HttpEntity<>(transferCardDto);
 
         ResponseEntity<SuccessesTransfer> response = restTemplate.postForEntity(
-                "http://localhost:" + backend.getMappedPort(8080) + "/transfer",
+                "http://localhost:" + port + "/transfer",
                 entity, SuccessesTransfer.class);
 
         assertNotNull(response.getBody());
@@ -70,7 +73,7 @@ public class IntegrationApplicationTest {
         HttpEntity<TransferCardDto> entity = new HttpEntity<>(transferCardDto);
 
         ResponseEntity<ErrorInputData> response = restTemplate.postForEntity(
-                "http://localhost:" + backend.getMappedPort(8080) + "/transfer",
+                "http://localhost:" + port + "/transfer",
                 entity, ErrorInputData.class);
 
         assertNotNull(response.getBody());
@@ -86,7 +89,7 @@ public class IntegrationApplicationTest {
         HttpEntity<TransferCardDto> entity = new HttpEntity<>(transferCardDto);
 
         ResponseEntity<ErrorInputData> response = restTemplate.postForEntity(
-                "http://localhost:" + backend.getMappedPort(8080) + "/transfer",
+                "http://localhost:" + port + "/transfer",
                 entity, ErrorInputData.class);
 
         assertNotNull(response.getBody());
