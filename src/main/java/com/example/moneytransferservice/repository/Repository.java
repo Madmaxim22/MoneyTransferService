@@ -6,7 +6,7 @@ import com.example.moneytransferservice.model.TransferCard;
 import com.example.moneytransferservice.model.TransferCardDto;
 
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @org.springframework.stereotype.Repository
 public class Repository {
@@ -19,12 +19,12 @@ public class Repository {
             });
 
     private final CopyOnWriteArrayList<TransferCard> transferCards = new CopyOnWriteArrayList<>();
-    private final AtomicLong operationId = new AtomicLong();
+    private final AtomicInteger operationId = new AtomicInteger();
 
 
     public boolean checkCard(String cardNumber) {
         for (Card card : cards) {
-            if(card.getCardNumber().equals(cardNumber)) return true;
+            if (card.getCardNumber().equals(cardNumber)) return true;
         }
         return false;
     }
@@ -48,7 +48,7 @@ public class Repository {
     }
 
     public int getId() {
-        return (int) operationId.incrementAndGet();
+        return operationId.incrementAndGet();
     }
 
     public boolean saveTransferCard(TransferCard transferCard) {
@@ -67,5 +67,13 @@ public class Repository {
                 .filter(c -> c.getOperationId() == operationId)
                 .findAny()
                 .orElseThrow(NotFoundException::new);
+    }
+
+    public CopyOnWriteArrayList<Card> getCards() {
+        return cards;
+    }
+
+    public CopyOnWriteArrayList<TransferCard> getTransferCards() {
+        return transferCards;
     }
 }
