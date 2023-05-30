@@ -19,6 +19,7 @@ class ConfirmServiceTest {
 
     Repository repository;
     ConfirmService service;
+
     @BeforeEach
     public void init() {
         repository = new Repository();
@@ -40,7 +41,7 @@ class ConfirmServiceTest {
         card.setCardFromNumber("1111111111111111");
         card.setCardToNumber("2222222222222222");
         card.setCardFromCVV("123");
-        card.setCardFromValidTill(String.valueOf(new SimpleDateFormat("MM/yy").parse("11/23")));
+        card.setCardFromValidTill(new SimpleDateFormat("MM/yy").parse("11/23"));
         Amount amount = new Amount();
         amount.setValue(1000);
         amount.setCurrency("RUR");
