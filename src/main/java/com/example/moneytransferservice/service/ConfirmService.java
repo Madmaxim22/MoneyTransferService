@@ -16,6 +16,7 @@ public class ConfirmService {
     private final Repository repository;
     private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(ConfirmService.class);
     private final int COMMISSION = 1;
+
     public ConfirmService(Repository repository) {
         this.repository = repository;
     }
@@ -24,8 +25,8 @@ public class ConfirmService {
         // получение id операции перевода
         TransferCard transferCard = repository.getTransferCard(confirm.getOperationId());
         // сравнение кодов
-        if(!Objects.equals(confirm.getCode(), transferCard.getConfirmationCode())) {
-             throw new RuntimeException("Неверный код подтвержения");
+        if (!Objects.equals(confirm.getCode(), transferCard.getConfirmationCode())) {
+            throw new RuntimeException("Неверный код подтвержения");
         }
         long commissionTransfer = commission(transferCard.getAmount().getValue());
         increaseAndDecreaseBalance(commissionTransfer, transferCard);

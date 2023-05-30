@@ -8,5 +8,6 @@ public interface TransferCardDtoMapper {
     TransferCardDto INSTANCE = Mappers.getMapper(TransferCardDto.class);
 
     TransferCardDto transferCardToTransferCardDto(TransferCard transferCard);
+
     TransferCard transferCardDtoToTransferCard(TransferCardDto transferCardDto);
 }

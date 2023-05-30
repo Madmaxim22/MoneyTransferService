@@ -1,5 +1,7 @@
 package com.example.moneytransferservice.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -8,10 +10,11 @@ import java.util.concurrent.atomic.AtomicLong;
 public class Card {
 
     private String cardNumber;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM/yy")
     private Date cardFromValidTill;
     private String cardFromCVV;
     private AtomicLong balance = new AtomicLong();
-    private String userPhoneNumber ;
+    private String userPhoneNumber;
 
     public Card(String cardNumber, String cardFromValidTill, String cardFromCVV, long balance, String userPhoneNumber) {
         this.cardNumber = cardNumber;

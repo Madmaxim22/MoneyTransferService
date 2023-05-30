@@ -5,8 +5,7 @@ import jakarta.validation.constraints.Positive;
 
 public class Confirm {
 
-    @NotBlank
-    @Positive
+    @Positive(message = "Номер операции должен быть положительным числом")
     private int operationId;
 
     @NotBlank

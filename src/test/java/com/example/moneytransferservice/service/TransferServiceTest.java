@@ -1,7 +1,6 @@
 package com.example.moneytransferservice.service;
 
 import com.example.moneytransferservice.model.Amount;
-import com.example.moneytransferservice.model.TransferCard;
 import com.example.moneytransferservice.model.TransferCardDto;
 import com.example.moneytransferservice.repository.Repository;
 import com.example.moneytransferservice.response.Response;
@@ -26,6 +25,7 @@ class TransferServiceTest {
     Repository repository;
     TransferCardDto transferCardDto;
     Amount amount;
+
     @BeforeEach
     public void init() throws ParseException {
         repository = new Repository();

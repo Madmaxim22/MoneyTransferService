@@ -26,10 +26,10 @@ paths:
                 cardFromCVV:
                   type: string
                 cardToNumber:
-                  type: string  
+                  type: string
                 amount:
                   type: object
-                  properties:  
+                  properties:
                     value:
                       type: integer
                     currency:
@@ -56,7 +56,7 @@ paths:
                     type: string
                     description: Error customer message
                   id:
-                    type: integer          
+                    type: integer
         '500':
           description: Error transfer
           content:
@@ -109,7 +109,7 @@ paths:
                     type: string
                     description: Error customer message
                   id:
-                    type: integer          
+                    type: integer
         '500':
           description: Error confirmation
           content:

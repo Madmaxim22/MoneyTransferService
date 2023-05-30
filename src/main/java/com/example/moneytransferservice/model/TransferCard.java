@@ -1,9 +1,14 @@
 package com.example.moneytransferservice.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import java.util.Date;
+
 public class TransferCard {
 
     private String cardFromNumber;
-    private String cardFromValidTill;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM/yy")
+    private Date cardFromValidTill;
     private String cardFromCVV;
     private String cardToNumber;
     private Amount amount;
@@ -18,11 +23,11 @@ public class TransferCard {
         this.cardFromNumber = cardFromNumber;
     }
 
-    public String getCardFromValidTill() {
+    public Date getCardFromValidTill() {
         return cardFromValidTill;
     }
 
-    public void setCardFromValidTill(String cardFromValidTill) {
+    public void setCardFromValidTill(Date cardFromValidTill) {
         this.cardFromValidTill = cardFromValidTill;
     }
 

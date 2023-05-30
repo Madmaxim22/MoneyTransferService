@@ -41,10 +41,10 @@ public class TransferService {
     }
 
     public boolean cardValidation(TransferCardDto transferCardDto) {
-        if(!repository.checkCard(transferCardDto.getCardToNumber())) {
+        if (!repository.checkCard(transferCardDto.getCardToNumber())) {
             throw new RuntimeException("Карта " + transferCardDto.getCardToNumber() + " не существует");
         }
-        if(!repository.checkCard(transferCardDto)) {
+        if (!repository.checkCard(transferCardDto)) {
             throw new RuntimeException("Карта " + transferCardDto.getCardFromNumber() + " не существует");
         }
         return true;

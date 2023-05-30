@@ -1,6 +1,6 @@
 package com.example.moneytransferservice.response;
 
-public class SuccessesTransfer implements Response{
+public class SuccessesTransfer implements Response {
     private int operationId;
 
     public SuccessesTransfer(int operationId) {
