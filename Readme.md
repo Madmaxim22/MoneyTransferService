@@ -60,13 +60,13 @@
 - перейти по адресу http://localhost:3000/
 
 <h2 align="center"><b>Справочно</b></h2>
-- структура проекта схематично отображена: [Structure backend.pdf](src%2Fmain%2Fresources%2Fdocumentation%2FStructure%20backend.pdf);
-- ТЗ проекта представлено в директории documentation;
-- файлы системных логов записываются: 
-  - В Windows тома находятся по умолчанию в **\\wsl.localhost\docker-desktop-data\data\docker\volumes\moneytransferservice_logs_app\_data**;
-  - В Linux тома находятся по умолчанию в **/var/lib/docker/volumes/**;
-- По умолчанию сервер запускается на порту 8080;
-- Процесс обмена backend'ом и frontend'ом описан в [MoneyTransferServiceSpecification.yaml](src%2Fmain%2Fresources%2FMoneyTransferServiceSpecification.yaml)
+- структура проекта схематично отображена в директории documentation;  
+- ТЗ проекта представлено в директории documentation;  
+- файлы системных логов записываются:   
+  - В Windows тома находятся по умолчанию в **\\wsl.localhost\docker-desktop-data\data\docker\volumes\moneytransferservice_logs_app\_data**;  
+  - В Linux тома находятся по умолчанию в **/var/lib/docker/volumes/**;  
+- По умолчанию сервер запускается на порту 8080;  
+- Процесс обмена backend'ом и frontend'ом описан в MoneyTransferServiceSpecification.yaml.   
  
 
 <h2 align="center"><b> Научился </b></h2>
