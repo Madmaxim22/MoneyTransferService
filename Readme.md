@@ -3,7 +3,7 @@
 <p align="center">
 
 <img src="https://img.shields.io/badge/made-Madmaxim22-blue">
-<img src="https://img.shields.io/badge/JDK-18-blue">
+<img src="https://img.shields.io/badge/JDK-17-blue">
 <img src="https://img.shields.io/github/stars/Madmaxim22/MoneyTransferService?color=yellow">
 <img src="https://img.shields.io/github/forks/Madmaxim22/MoneyTransferService?color=blue">
 <img src="https://img.shields.io/github/watchers/Madmaxim22/MoneyTransferService?color=blue">
