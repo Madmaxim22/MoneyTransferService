@@ -66,8 +66,8 @@
 - файлы системных логов записываются:   
   - В Windows тома находятся по умолчанию в **\\wsl.localhost\docker-desktop-data\data\docker\volumes\moneytransferservice_logs_app\_data**;  
   - В Linux тома находятся по умолчанию в **/var/lib/docker/volumes/**;  
-- По умолчанию сервер запускается на порту 8080;  
-- Процесс обмена backend'ом и frontend'ом описан в MoneyTransferServiceSpecification.yaml.   
+- по умолчанию сервер запускается на порту 8080;  
+- процесс обмена backend'ом и frontend'ом описан в MoneyTransferServiceSpecification.yaml.   
  
 
 <h2 align="center"><b> Научился </b></h2>
